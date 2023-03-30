@@ -26,22 +26,36 @@
 
 
 .sidebar{
+    background-color:rgb(36, 191, 242) ;
     flex: 1;
 }
 .chat{
     flex: 2;
     position: relative;
-    background-color: lightgreen;
+    background-color: rgb(92, 199, 234);
 }
+/* Auth CSS ================================================ */
 
+.auth{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 /* Navbar CSS ============================================*/
-
+.logout_button{
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+.logo{
+    font-weight: 900;
+}
 .navbar{
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 15px;
-    background-color: yellow;
+    background-color: rgb(36, 191, 242);
 }
 
 .user{
@@ -61,7 +75,8 @@
 /* Search Css =========================================================== */
 
 .search{
-    background-color: blue;
+    background-color: rgb(81, 81, 252);
+    color: white;
 }
 .search_input{
     border: 0;
@@ -70,6 +85,9 @@
     background-color: transparent;
     width: 100%;
     height: 30px;
+}
+.search_input::placeholder{
+    color: white;
 }
 .search_input:focus{
     outline: none;
@@ -80,7 +98,6 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    overflow-x: scroll;
 }
 
 /* Chats CSS=================================================================== */
@@ -106,12 +123,21 @@
 /* CHat CSS ============================================================ */
 
 .chatInfo{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: rgb(81, 81, 252);
     padding: 10px;
+    z-index: 5;
 }
-
+.icon{
+    margin-right: 15px;
+}
+/* input css========================================= */
 .input_page{
     position: absolute;
     bottom: 0;
@@ -123,25 +149,41 @@
     right: 0;
     left: 0;
     margin: 0;
-    background-color: lightcoral;
+    background-color: rgb(81, 81, 252);
+
+
 }
 
 .type_input{
     width: 100%;
     height: 100%;
+    background-color: transparent;
+    border: none;
+    padding-left: 10px;
+    border-right: 0.5px solid gray;
+    outline: none;
+}
+.type_input::placeholder{
+    color: white;
 }
 
 .send{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 10px;
+}
+
+.send_button{
+    padding: 10px;
+    width: auto;
+    margin-right: 15px;
 }
 /* Messages CSS =================================================== */
 .messages{
-    padding: 10px;
-    background-color: yellow;
-    height: 100%;
-    overflow: scroll;
+    padding: 70px 10px 10px 10px;
+    height: 91%;
+    overflow-y: scroll;
 
 }
 /* Message Css========================================================= */

@@ -124,7 +124,7 @@ function Signup() {
                                     <label htmlFor='pasword'>Password</label>
                                     <input type='password' className='pass_word input' minLength={8} placeholder='Password' name='password' required/>
                                     <label htmlFor='image'>Add Image</label>
-                                    <input type='file' className='image input' placeholder='Add your Image' name='image' required/>
+                                    <input type='file' className='image input' placeholder='Add your Image' name='image'/>
                                 </div>
                                 <DialogActions>
                                     <Button autoFocus

@@ -2,6 +2,8 @@ import React, { useContext,useEffect } from 'react'
 import {signOut} from "firebase/auth"
 import { auth } from '../Firbase/firbase'
 import { AuthContext } from '../Context/AuthContext'
+import LogoutIcon from '@mui/icons-material/Logout';
+import { Avatar } from '@mui/material';
 
 const Navbar = () => {
   const {currentUser} = useContext(AuthContext)
@@ -11,11 +13,11 @@ const Navbar = () => {
     <>
     {currentUser && currentUser.displayName &&
       <div className='navbar'>
-      <span className="logo">Lama Chat</span>
+      <span className="logo">MEU CHAT</span>
       <div className="user">
-        <img src={currentUser.photoURL} alt="" className='nav_img'/>
+        <Avatar src={currentUser.photoURL} alt="" className='nav_img'/>
         <span className='navbar_name'>{currentUser.displayName.split(' ')[0]}</span>
-        <button onClick={()=>signOut(auth)}>logout</button>
+        <button className="logout_button" onClick={()=>signOut(auth)}><LogoutIcon /></button>
       </div>
     </div>
     }
