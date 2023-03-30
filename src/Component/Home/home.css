@@ -1,0 +1,54 @@
+/* HOME CSS===================================== */
+
+.home_page{
+    height: 100vh;
+    width: 100vw;
+    display: flex !important;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+}
+
+/* *{
+    color: #35b8fedb;
+} */
+
+.container{
+    height: 90%;
+    width: 90%;
+    border: 1px solid black;
+    display: flex;
+    
+}
+
+
+.sidebar{
+    flex: 1;
+}
+.chat{
+    flex: 2;
+}
+
+/* Navbar CSS ============================================*/
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: yellow;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/* .navbar_name{
+    margin-right: 10px;
+} */
+.nav_img{
+    height: 24px;
+    width: 24px;
+    object-fit: cover;
+}
