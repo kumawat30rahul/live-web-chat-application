@@ -20,6 +20,7 @@
     width: 90%;
     border: 1px solid black;
     display: flex;
+    overflow: hidden;
     
 }
 
@@ -29,6 +30,8 @@
 }
 .chat{
     flex: 2;
+    position: relative;
+    background-color: lightgreen;
 }
 
 /* Navbar CSS ============================================*/
@@ -107,4 +110,96 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px;
+}
+
+.input_page{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    right: 0;
+    left: 0;
+    margin: 0;
+    background-color: lightcoral;
+}
+
+.type_input{
+    width: 100%;
+    height: 100%;
+}
+
+.send{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* Messages CSS =================================================== */
+.messages{
+    padding: 10px;
+    background-color: yellow;
+    height: 100%;
+    overflow: scroll;
+
+}
+/* Message Css========================================================= */
+
+.message{
+    /* background-color: yellow; */
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+.message_info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+
+.message_info>p{
+    margin: 0;
+    padding: 0
+}
+
+.message_content{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    max-width: 80%;
+}
+
+.message_content_p{
+    background-color: white;
+    display: inline;
+    width: max-content;
+    padding: 10px 20px;
+    border-radius: 0 10px 10px 10px;
+    margin: 0 0 10px 0;
+}
+.msg_content_img{
+    width: 20%;
+}
+
+.owner{
+    flex-direction: row-reverse;
+}
+
+.owner > .message_content {
+    align-items: flex-end;
+}
+
+.owner > .message_info {
+    align-items: flex-end;
+}
+
+.owner > .message_content > .msg_content_img{
+    height: auto;
+    width: 20%;
+}
+
+.owner > .message_content >.message_content_p{
+    background-color: rgb(104, 104, 238);
 }
