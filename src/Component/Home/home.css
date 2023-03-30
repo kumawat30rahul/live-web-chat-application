@@ -1,5 +1,7 @@
 /* HOME CSS===================================== */
-
+*{
+    box-sizing: border-box;
+}
 .home_page{
     height: 100vh;
     width: 100vw;
@@ -51,4 +53,58 @@
     height: 24px;
     width: 24px;
     object-fit: cover;
+}
+
+/* Search Css =========================================================== */
+
+.search{
+    background-color: blue;
+}
+.search_input{
+    border: 0;
+    border-bottom: 1px solid black;
+    padding: 10px;
+    background-color: transparent;
+    width: 100%;
+    height: 30px;
+}
+.search_input:focus{
+    outline: none;
+}
+
+.userChat_div{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow-x: scroll;
+}
+
+/* Chats CSS=================================================================== */
+.chats{
+    padding: 10px;
+}
+.user_Chat{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.userChatInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10px;
+}
+.userChatInfo > p {
+    margin: 0;
+}
+
+/* CHat CSS ============================================================ */
+
+.chatInfo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
 }
