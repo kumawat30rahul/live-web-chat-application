@@ -5,11 +5,33 @@ import DialogActions from '@mui/material/DialogActions'
 import DialogContent from '@mui/material/DialogContent'
 import DialogContentText from '@mui/material/DialogContentText'
 import DialogTitle from '@mui/material/DialogTitle'
-import TextField from '@mui/material/TextField'
 import './login.css'
+import { doc, setDoc } from "firebase/firestore"; 
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../Firbase/firbase";
+import {useNavigate} from 'react-router-dom'
+
+
 
 function Login() {
   const [open,setOpen] = React.useState(false)
+  const [error,setError] = React.useState(false)
+  const [loading,setLoading] = React.useState(false)
+
+  const navigate = useNavigate()
+
+  const handleSubmit = async (e:any) => {
+    e.preventDefault();
+    const email = e.target[0].value
+    const password = e.target[1].value
+
+    try{
+      await signInWithEmailAndPassword(auth, email, password);
+      navigate("/")
+    }catch{
+      setError(true);
+    }
+  }
   return (
     <>
         <Button 
@@ -52,7 +74,7 @@ function Login() {
                   id="dialog-description"
                 >
                   <div className='inputs'>
-                            <form>
+                            <form onSubmit={handleSubmit}>
                                 <div className='input_div'>
                                     <label htmlFor='emailId'>Email Id</label>
                                     <input type='email' className='email_id input' placeholder='Email Id' name='emailId' required/>

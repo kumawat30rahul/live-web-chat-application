@@ -51,7 +51,7 @@ function Signup() {
                             photoURL: downloadURL,
                           });
                         //   const navigate = useNavigate()
-                        //   await setDoc(doc(db, "userChats", res.user.uid), {});
+                          await setDoc(doc(db, "userChats", res.user.uid), {});
                         //     navigate("/");
                     }catch(err){
                         console.log(err);
