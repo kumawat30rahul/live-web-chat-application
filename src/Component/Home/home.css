@@ -26,8 +26,10 @@
 
 
 .sidebar{
-    background-color:rgb(36, 191, 242) ;
+    background-color:#23bff2;
     flex: 1;
+    max-width: 30%;
+    overflow: hidden;
 }
 .chat{
     flex: 2;
@@ -35,7 +37,11 @@
     background-color: rgb(92, 199, 234);
 }
 /* Auth CSS ================================================ */
-
+.file_input{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
 .auth{
     display: flex;
     align-items: center;
@@ -122,6 +128,15 @@
 
 /* CHat CSS ============================================================ */
 
+.last_message{
+    background-color: rgba(36, 36, 35, 0.26);
+    max-width: 100%;
+    overflow-wrap: break-word;
+    text-align: start;
+    padding: 5px;
+    border-radius: 5px;
+    
+}
 .chatInfo{
     position: absolute;
     top: 0;
@@ -216,10 +231,15 @@
 .message_content_p{
     background-color: white;
     display: inline;
-    width: max-content;
+    /* width: max-content; */
     padding: 10px 20px;
     border-radius: 0 10px 10px 10px;
     margin: 0 0 10px 0;
+    /* min-width: max-content; */
+    width: 50%;
+    overflow-wrap: break-word;
+    text-align: start;
+    min-width: 60px;
 }
 .msg_content_img{
     width: 20%;
@@ -244,4 +264,11 @@
 
 .owner > .message_content >.message_content_p{
     background-color: rgb(104, 104, 238);
+    overflow-wrap: break-word;
 }
+
+/* @media (max-width: 400px){
+    .container{
+        flex-direction: column;
+    }
+} */

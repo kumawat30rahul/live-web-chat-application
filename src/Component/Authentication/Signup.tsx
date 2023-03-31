@@ -9,11 +9,12 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { auth,storage,db } from '../Firbase/firbase'
 import './signup.css'
-import { Typography } from '@mui/material'
+import { Avatar, Typography } from '@mui/material'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { doc, setDoc } from 'firebase/firestore'
 import { useNavigate } from 'react-router-dom'
+import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 
 
 
@@ -123,8 +124,13 @@ function Signup() {
                                     <input type='email' className='email_id input' placeholder='Email Id' name='emailId' required/>
                                     <label htmlFor='pasword'>Password</label>
                                     <input type='password' className='pass_word input' minLength={8} placeholder='Password' name='password' required/>
-                                    <label htmlFor='image'>Add Image</label>
-                                    <input type='file' className='image input' placeholder='Add your Image' name='image'/>
+                                    <label htmlFor='image' className='file_input'>
+                                        <p>Add Your Image</p>
+                                        <Avatar >
+                                            <AddPhotoAlternateIcon />
+                                        </Avatar>
+                                    </label>
+                                    <input type='file' style={{display: 'none'}} className='image input' placeholder='Add your Image' id='image'/>
                                 </div>
                                 <DialogActions>
                                     <Button autoFocus

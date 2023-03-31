@@ -37,7 +37,6 @@ function Input() {
             await updateDoc(doc(db, "chats", data.chatId), {
               messages: arrayUnion({
                 id: uuidddd,
-                // text,
                 senderId: currentUser.uid,
                 date: Timestamp.now(),
                 img: downloadURL,
@@ -46,11 +45,7 @@ function Input() {
           });
         }
       );
-    } else {
-      if (!text) {
-        alert("Type something before sending")
-        return;
-      }
+    } else if (text) { // check if text is not empty
       await updateDoc(doc(db, "chats", data.chatId), {
         messages: arrayUnion({
           id: uuidddd,
@@ -59,25 +54,29 @@ function Input() {
           date: Timestamp.now(),
         }),
       });
+
+      await updateDoc(doc(db, "userChats", currentUser.uid), {
+        [data.chatId + ".lastMessage"]: {
+          text,
+        },
+        [data.chatId + ".date"]: serverTimestamp(),
+      });
+
+      await updateDoc(doc(db, "userChats", data.user.uid), {
+        [data.chatId + ".lastMessage"]: {
+          text,
+        },
+        [data.chatId + ".date"]: serverTimestamp(),
+      });
+    } else { // both text and image are empty
+      alert("Type something or upload an image before sending");
+      return;
     }
-
-    await updateDoc(doc(db, "userChats", currentUser.uid), {
-      [data.chatId + ".lastMessage"]: {
-        text,
-      },
-      [data.chatId + ".date"]: serverTimestamp(),
-    });
-
-    await updateDoc(doc(db, "userChats", data.user.uid), {
-      [data.chatId + ".lastMessage"]: {
-        text,
-      },
-      [data.chatId + ".date"]: serverTimestamp(),
-    });
 
     setText("");
     setImg(null);
   };
+
 
   const sendChat = (e) => {
     e.code ==="Enter" && handleSend();

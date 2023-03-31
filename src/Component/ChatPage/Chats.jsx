@@ -40,7 +40,9 @@ function Chats() {
         <Avatar alt="Remy Sharp" src={chat[1].userInfo?.photoURL || ''} />
           <div className="userChatInfo">
             <span>{chat[1].userInfo?.displayName || ''}</span>
-            <p>{chat[1].lastMessage?.text || ''}</p>
+            <p className='last_message'>
+              {(chat[1].lastMessage?.text || '').slice(0,37) + ((chat[1].lastMessage?.text || '').length > 35 ? "..." : "") }
+            </p>
           </div>
         </div>
         ))}

@@ -66,7 +66,9 @@ const Message = ({ message }) => {
         <span>just now</span>
       </div>
       <div className="message_content">
+      {message.text && (
         <p className='message_content_p'>{message.text}</p>
+      )}
         {message.img && <img src={message.img} alt="" className="msg_content_img" />}
       </div>
     </div>
