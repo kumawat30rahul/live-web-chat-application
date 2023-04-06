@@ -63,7 +63,7 @@ const Message = ({ message }) => {
               ? currentUser.photoURL
               : data.user.photoURL
           } />
-        <span>just now</span>
+        <span className="span">Just now</span>
       </div>
       <div className="message_content">
       {message.text && (

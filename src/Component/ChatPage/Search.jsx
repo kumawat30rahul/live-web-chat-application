@@ -19,8 +19,11 @@ function Search() {
 
     try {
       const querySnapshot = await getDocs(q);
+      if (querySnapshot.empty) {
+        alert("User not found");
+        return;
+      }
       querySnapshot.forEach((doc) => {
-        setUser(doc.data());
       });
     } catch (err) {
       setErr(true);
@@ -76,7 +79,9 @@ function Search() {
           type="text"
           placeholder="Find a user"
           onKeyDown={handleKey}
-          onInput={(e)=>setUsername(e.target.value)}
+          onInput={(e)=>{
+            console.log(e.target.value)
+            setUsername(e.target.value)}}
           value={username}
           className='search_input'
         />
