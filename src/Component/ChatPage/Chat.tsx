@@ -1,17 +1,19 @@
-import React,{useContext} from 'react'
+import React,{useContext, useEffect} from 'react'
 import Messages from './Messages'
 import VideocamIcon from '@mui/icons-material/Videocam';
 import AddIcCallIcon from '@mui/icons-material/AddIcCall';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Input from './Input'
 import { ChatContext } from "../Context/ChatContext";
+// import Chat from '../../../src/Assest/chat.png'/
 
 function Chat() {
     const { data } = useContext(ChatContext);
+    useEffect(()=>{console.log(data.chatId, typeof data.chatId )},[data])
 
   return (
     <div className='chat'>
-      {data ? 
+      {data.chatId !== 'null' ? 
       <>
         <div className="chatInfo">
           <span>{data.user?.displayName}</span>
@@ -24,8 +26,8 @@ function Chat() {
         <Messages />
         <Input />
         </>
-       :
-      <h1>Select a chat</h1>  
+        :
+        <img src="https://thumbs.dreamstime.com/b/man-woman-chatting-sitting-computers-office-social-media-communication-doodle-man-woman-chatting-sitting-115150786.jpg" alt="" />
         }
     </div>
       
