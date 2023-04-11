@@ -111,7 +111,6 @@ function Signup() {
                     Discover new friendships and endless conversations.
                 </Typography>
                 <DialogContent
-                
                     className='dialog_content'
                 >
                     <DialogContentText id="dialog-description">

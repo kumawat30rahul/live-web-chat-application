@@ -62,11 +62,16 @@ form{
 }
 
 
-@media (max-width: 320px){
+@media (max-width: 426px){
     .input_div{
         margin: 0;
+        width: auto !important;
     }
     .input{
         width: 270px;
     }
+
+    /* .dialog{
+     width: 300px !important;
+    } */
 }

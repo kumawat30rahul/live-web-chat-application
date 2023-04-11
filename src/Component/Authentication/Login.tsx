@@ -52,7 +52,6 @@ function Login() {
             aria-describedby='dialog-description'
             className='dialog'
             // maxWidth='lg'
-            
         >
             <DialogTitle 
               sx={{
@@ -67,8 +66,9 @@ function Login() {
               </DialogTitle>
             <DialogContent
               sx={{
-                width: '500px'
+                width: '300px'
               }}
+              className='dialog_content'
             >
                 <DialogContentText 
                   id="dialog-description"
