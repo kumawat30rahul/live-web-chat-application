@@ -11,17 +11,24 @@ function Chat() {
 
   return (
     <div className='chat'>
-      <div className="chatInfo">
-        <span>{data.user?.displayName}</span>
-        <div className="chatIcons">
-          <VideocamIcon className='icon'/>
-          <AddIcCallIcon className='icon'/>
-          <MoreVertIcon className='icon'/>
+      {data ? 
+      <>
+        <div className="chatInfo">
+          <span>{data.user?.displayName}</span>
+          <div className="chatIcons">
+            <VideocamIcon className='icon'/>
+            <AddIcCallIcon className='icon'/>
+            <MoreVertIcon className='icon'/>
+          </div>
         </div>
-      </div>
-      <Messages />
-      <Input />
+        <Messages />
+        <Input />
+        </>
+       :
+      <h1>Select a chat</h1>  
+        }
     </div>
+      
   )
 }
 

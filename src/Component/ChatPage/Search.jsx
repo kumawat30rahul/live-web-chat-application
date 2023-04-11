@@ -21,10 +21,14 @@ function Search() {
       const querySnapshot = await getDocs(q);
       if (querySnapshot.empty) {
         alert("User not found");
+        setErr(true);
         return;
+      }else{
+        querySnapshot.forEach((doc) => {
+          setUser(doc.data());
+        });
+        setErr(false);
       }
-      querySnapshot.forEach((doc) => {
-      });
     } catch (err) {
       setErr(true);
     }

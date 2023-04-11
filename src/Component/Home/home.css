@@ -328,11 +328,17 @@
   @media (max-width: 600px){
     .container{
         flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
         overflow-y: scroll;
+    }
+    .sidebar{
+        max-width: unset;
+        width: 95%;
     }
     .chat{
         margin-top: 10px;
-        width: 280px;
+        width: 95%;
         min-height: 500px;
         margin-top: 10px;
         margin-left: 0;
