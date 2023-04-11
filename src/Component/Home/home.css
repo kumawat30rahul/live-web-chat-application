@@ -42,6 +42,20 @@
     margin-left: 10px;
     padding: 10px;
 }
+
+.chat-flex{
+    height: 100%;
+    position: relative;
+    background-color:#070d22fa;
+    width: 80%;
+    border-radius: 10px;
+    margin-left: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 /* Auth CSS ================================================ */
 .file_input{
     display: flex;
@@ -141,6 +155,10 @@
 
 .userChatInfo > span{
     margin-bottom: 2px;
+}
+.chat_image{
+    height: 250px;
+    width: auto;
 }
 /* CHat CSS ============================================================ */
 
@@ -326,6 +344,11 @@
   }
 
   @media (max-width: 600px){
+
+    .chat_image{
+        height: 150px;
+        width: auto;
+    }
     .container{
         flex-direction: column;
         /* justify-content: center; */
@@ -343,4 +366,10 @@
         margin-top: 10px;
         margin-left: 0;
     }
+
+    .chat-flex{
+        margin-top: 10px;
+        width: 95%;
+        margin-left: 0;
     }
+ }
